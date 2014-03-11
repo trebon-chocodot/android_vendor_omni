@@ -3,15 +3,15 @@
 # Licensed under GPLv3
 
 # Configuration
-ANDROID_ROOT=~/omni
+ANDROID_ROOT=~/Chocodot
 PREFIX=android_
 BRANCH=android-4.4
 SOURCE=android-4.4.2_r1
 MANIFEST=android/default.xml
-GITHUB_ORG=omnirom
+GITHUB_ORG=Chocodotrom
 USERNAME=xplodwild
-GERRIT_REMOTE=ssh://gerrit.omnirom.org:29418
-REMOTE_MANIFEST=omnirom
+GERRIT_REMOTE=ssh://gerrit.Chocodotrom.org:29418
+REMOTE_MANIFEST=Chocodotrom
 
 # Script
 if [ $# -lt 1 ]; then
@@ -36,7 +36,7 @@ echo "Creating $REPO_NAME on GitHub..."
 curl --user $USERNAME --data "{\"name\":\"$REPO_NAME\"}" https://api.github.com/orgs/$GITHUB_ORG/repos
 
 # Only works if you are a gerrit admin, will create the named project before pushing (gerrit then replicates to git)
-ssh -p 29418 gerrit.omnirom.org gerrit create-project --name $REPO_NAME
+ssh -p 29418 gerrit.Chocodotrom.org gerrit create-project --name $REPO_NAME
 
 echo "Creating branch $BRANCH..."
 pushd $1
